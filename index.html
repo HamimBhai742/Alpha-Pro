@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" data-them="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Pro</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <main class="bg-[#010313] min-h-screen bg-[url(images/background.png)] bg-no-repeat bg-center">
+        <section id="home-screen" class=" flex flex-col justify-center items-center min-h-screen gap-8">
+            <h1 class="font-anton text-8xl text-white">ALPHABET CLASH</h1>
+            <p class="text-2xl text-white">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
+            <button onclick="palyBtn()" class="h-16 bg-white text-black w-36 font-bold text-2xl rounded-lg">Paly Now</button>
+        </section>
+        <section id="paly-ground" class=" flex flex-col items-center gap-24 pt-10 hidden">
+            <div class="h-[400px] w-[1170px]  border-[20px] border-[#010313CC] rounded-2xl bg-[#FFFFFFB2]">
+                <div class="text-center flex justify-center">
+                    <p class="bg-[#2F2941] h-8 text-[#fff] w-96 rounded-md font-poppins">Don't watch keyboard while
+                        playing...</p>
+                </div>
+                <div>
+                    <p id="current-text"
+                        class="text-9xl font-poppins font-bold flex items-center justify-center h-[340px] text-[#010313] uppercase">
+                        Y</p>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd id="q" class="kbd">q</kbd>
+                    <kbd id="w" class="kbd">w</kbd>
+                    <kbd id="e" class="kbd">e</kbd>
+                    <kbd id="r" class="kbd">r</kbd>
+                    <kbd id="t" class="kbd">t</kbd>
+                    <kbd id="y" class="kbd">y</kbd>
+                    <kbd id="u" class="kbd">u</kbd>
+                    <kbd id="i" class="kbd">i</kbd>
+                    <kbd id="o" class="kbd">o</kbd>
+                    <kbd id="p" class="kbd">p</kbd>
+                </div>
+                <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd id="a" class="kbd">a</kbd>
+                    <kbd id="s" class="kbd">s</kbd>
+                    <kbd id="d" class="kbd">d</kbd>
+                    <kbd id="f" class="kbd">f</kbd>
+                    <kbd id="g" class="kbd">g</kbd>
+                    <kbd id="h" class="kbd">h</kbd>
+                    <kbd id="j" class="kbd">j</kbd>
+                    <kbd id="k" class="kbd">k</kbd>
+                    <kbd id="l" class="kbd">l</kbd>
+                </div>
+                <div class="flex justify-center gap-1 my-1 w-full">
+                    <kbd id="z" class="kbd">z</kbd>
+                    <kbd id="x" class="kbd">x</kbd>
+                    <kbd id="c" class="kbd">c</kbd>
+                    <kbd id="v" class="kbd">v</kbd>
+                    <kbd id="b" class="kbd">b</kbd>
+                    <kbd id="n" class="kbd">n</kbd>
+                    <kbd id="m" class="kbd">m</kbd>
+                    <kbd id="/" class="kbd">/</kbd>
+                </div>
+            </div>
+            <div class="flex justify-between w-[1170px]">
+                <button
+                    class="font-inter rounded-3xl w-36 h-14 text-white flex items-center gap-2 bg-[#894189] text-xl font-medium px-5">Life<img
+                        src="images/Group 23.png" alt=""><span id="life-table">5</span></button>
+                <button
+                    class="font-inter rounded-3xl w-36 h-14 text-white flex items-center gap-2 bg-[#360490] text-xl font-medium px-5 ">Score<img
+                        src="images/monetization_on.jpg" alt=""><span id="score-table">0</span></button>
+            </div>
+        </section>
+        <section id="score-point" class="score font-poppins hidden">
+            <div class="flex justify-center items-center min-h-screen rounded-xl">
+                <div class="w-[500px] h-[300px] background-mid p-8 text-center space-y-6 rounded-xl">
+                    <h3 class="text-7xl font-extrabold text-white">Score : <span class="font-medium" id="final-score-table">0</span></h3>
+                    <button onclick="palyBtn()" class="w-48 h-20 text-2xl font-semibold text-black bg-white p-4 rounded-lg">Play
+                        Again</button>
+                    <p class="text-xl font-medium text-white">Practice will make you Pro</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script/utility.js"></script>
+    <script src="script/alpha-clash.js"></script>
+</body>
+
+</html>
